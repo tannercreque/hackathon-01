@@ -5,7 +5,6 @@ import Fryer from './components/Folder/airFUCKINGfryer.jpg';
 import RecipeContainer from './components/RecipeContainer'
 import { Component } from 'react';
 
-const recipesUrl = "http://localhost:3000/recipies"
 
 class App extends Component {
 
@@ -13,19 +12,19 @@ class App extends Component {
     recipes: []
   }
 
-  componentDidMount() {
-    fetch(recipesUrl)
-      .then(response => response.json())
-      .then(recipes => this.setState({
-        recipes: recipes
-      }))
+
+
+  setRecipeState = ({ results }) => {
+    this.setState({
+      recipes: results
+    })
   }
 
   render() {
     return (
       <div className="App">
         <Title /> 
-        <Form />
+        <Form setRecipe={this.setRecipeState}/>
         <img src={ Fryer } alt="Fryer"/>
         <h1>Recipes</h1>
         <RecipeContainer recipes={this.state.recipes} />
