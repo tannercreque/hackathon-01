@@ -5,7 +5,7 @@ const RecipeCards = ({recipe}) => {
   const {ingredients, href, title} = recipe
 
   return (
-    <div>
+    <div className="recipe-card">
       <h1>{title}</h1>
       <p>{ingredients}</p>
       <a href={href}>recipe link</a>
@@ -14,5 +14,3 @@ const RecipeCards = ({recipe}) => {
 }
 
 export default RecipeCards
-
-//

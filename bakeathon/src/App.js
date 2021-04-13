@@ -27,6 +27,7 @@ class App extends Component {
         <Title /> 
         <Form />
         <img src={ Fryer } alt="Fryer"/>
+        <h1>Recipes</h1>
         <RecipeContainer recipes={this.state.recipes} />
       </div>
     );

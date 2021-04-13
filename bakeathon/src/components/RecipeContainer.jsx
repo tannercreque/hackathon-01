@@ -3,12 +3,11 @@ import RecipeCard from './RecipeCards'
 
 const RecipeContainer = ({recipes}) => {
   const renderRecipeCards = () => recipes.map(recipe => {
-    return <RecipeCard recipe={recipe} />
+    return <RecipeCard key={recipe.href} recipe={recipe} />
   })
   
   return (
-    <div>
-      <h1>Recipes</h1>
+    <div className="recipe-container">
       {renderRecipeCards()}
     </div>
   )
